@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title %}{% endblock %}</title>
+
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" media="screen">
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<div>
+  {% block content %}{% endblock %}
+</div>
+
+{% block footer %}
+    <br>
+    <div>
+      <a target="_blank" href="https://github.com/jessamynsmith/django-wkhtmltopdf-example">Source code</a> here.
+        <br>
+        Like my work? Tip me! <a target="_blank" href="https://www.paypal.me/jessamynsmith">https://www.paypal.me/jessamynsmith</a>
+    </div>
+{% endblock %}
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>
