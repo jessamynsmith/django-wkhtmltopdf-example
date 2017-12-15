@@ -12,6 +12,7 @@ Like my work? Tip me! https://www.paypal.me/jessamynsmith
 Install system dependencies using a package manager. E.g. for OSX, using homebrew:
 
     brew install python3
+    brew cask install wkhtmltopdf
     brew install postgresql  # optional, will use sqlite if not available
 
 Fork the project on github and git clone your fork, e.g.:
@@ -34,6 +35,13 @@ Optional environment variables, generally only required in production:
     DJANGO_SECRET_KEY
     
 You can add the exporting of environment variables to the virtualenv activate script so they are always available.
+
+Set up a local symlink to the system wkhtmltopdf that mimics the location on heroku. In the project directory:
+
+    mkdir bin
+    cd bin
+    which wkhtmltopdf
+    ln -s /path/to/wkhtmltopdf wkhtmltopdf  # Must use the value retrieved in the previous step
 
 Install postgresql if desired. If you don't use postgresql, the app will use sqlite. If you use postgresql, you need an additional environment variable:
 
@@ -63,4 +71,11 @@ This project is already set up for deployment to Heroku.
 Make a new Heroku app, and add the following addons:
 
     Heroku Postgres
+    
+Add Heroku buildpacks:
+
+    heroku buildpacks:set https://github.com/jessamynsmith/heroku-buildpack-apt -i 1
+    heroku buildpacks:set heroku/python -i 2
+    heroku buildpacks:set https://github.com/dscout/wkhtmltopdf-buildpack.git -i 3
+
 	
