@@ -87,8 +87,9 @@ Make a new Heroku app, and add the following addons:
     
 Add Heroku buildpacks:
 
-    heroku buildpacks:set heroku/python -i 1
-    heroku buildpacks:set https://github.com/dscout/wkhtmltopdf-buildpack.git -i 2
+    heroku buildpacks:set heroku/nodejs -i 1
+    heroku buildpacks:set heroku/python -i 2
+    heroku buildpacks:set https://github.com/dscout/wkhtmltopdf-buildpack.git -i 3
 
 Deploy:
 
