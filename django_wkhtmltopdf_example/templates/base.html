@@ -8,24 +8,25 @@
 
   <title>{% block title %}{% endblock %}</title>
 
+  <link rel="stylesheet" href="{% static 'admin/css/base.css' %}" type="text/css" media="screen">
   <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" media="screen">
 
   {% block extra_head %}{% endblock %}
 </head>
 <body>
 
-<div>
+<div id="content">
   {% block content %}{% endblock %}
-</div>
 
-{% block footer %}
-    <br>
-    <div>
-      <a target="_blank" href="https://github.com/jessamynsmith/django-wkhtmltopdf-example">Source code</a> here.
+    {% block footer %}
         <br>
-        Like my work? Tip me! <a target="_blank" href="https://www.paypal.me/jessamynsmith">https://www.paypal.me/jessamynsmith</a>
-    </div>
-{% endblock %}
+        <div>
+          <a target="_blank" href="https://github.com/jessamynsmith/django-wkhtmltopdf-example">Source code</a> here.
+            <br>
+            Like my work? Tip me! <a target="_blank" href="https://www.paypal.me/jessamynsmith">https://www.paypal.me/jessamynsmith</a>
+        </div>
+    {% endblock %}
+</div>
 
 {% block extra_js %}{% endblock %}
 

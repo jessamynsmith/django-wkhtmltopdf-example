@@ -12,8 +12,11 @@ Like my work? Tip me! https://www.paypal.me/jessamynsmith
 Install system dependencies using a package manager. E.g. for OSX, using homebrew:
 
     brew install python3
-    brew cask install wkhtmltopdf
     brew install postgresql  # optional, will use sqlite if not available
+
+Install wkhtmltopdf 0.12.3 for your system from the following link:
+
+    https://github.com/wkhtmltopdf/wkhtmltopdf/releases/tag/0.12.3
 
 Fork the project on github and git clone your fork, e.g.:
 
@@ -32,7 +35,12 @@ Set environment variables as desired. Recommended dev settings:
 
 Optional environment variables, generally only required in production:
 
+    ADMIN_NAME
+    ADMIN_EMAIL
     DJANGO_SECRET_KEY
+    REPLY_TO_EMAIL
+    SENDGRID_PASSWORD
+    SENDGRID_USERNAME
     
 You can add the exporting of environment variables to the virtualenv activate script so they are always available.
 
@@ -43,7 +51,7 @@ Set up a local symlink to the system wkhtmltopdf that mimics the location on her
     which wkhtmltopdf
     ln -s /path/to/wkhtmltopdf wkhtmltopdf  # Must use the value retrieved in the previous step
 
-Install postgresql if desired. If you don't use postgresql, the app will use sqlite. If you use postgresql, you need an additional environment variable:
+If you don't configure postgresql, the app will use sqlite. If you use postgresql, you need an additional environment variable:
 
     export DATABASE_URL='postgres://<username>@127.0.0.1:5432/django_wkhtmltodpf_example'
 
@@ -71,11 +79,11 @@ This project is already set up for deployment to Heroku.
 Make a new Heroku app, and add the following addons:
 
     Heroku Postgres
+    SendGrid
     
 Add Heroku buildpacks:
 
-    heroku buildpacks:set https://github.com/jessamynsmith/heroku-buildpack-apt -i 1
-    heroku buildpacks:set heroku/python -i 2
-    heroku buildpacks:set https://github.com/dscout/wkhtmltopdf-buildpack.git -i 3
+    heroku buildpacks:set heroku/python -i 1
+    heroku buildpacks:set https://github.com/dscout/wkhtmltopdf-buildpack.git -i 2
 
 	

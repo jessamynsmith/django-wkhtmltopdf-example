@@ -1,0 +1,43 @@
+<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px;">
+
+  <div style="padding: 11px; padding-bottom: 14px; color: #ffffff; background-color:#700a0a;">
+        <span style="display: inline-block;">
+        <span style="font-size: 22px;">wkhtmltopdf</span><br>
+        <span style="font-size: 12px; margin-left: 1px;">Django PDF example</span>
+        </span>
+  </div>
+
+  <br>
+
+  <p>
+    Hello!
+    <br><br>
+    {% block content %}{% endblock %}
+    <br><br>
+    {{ admin_name }}
+  </p>
+  <br>
+
+  <hr>
+
+  <div style="width: 100%; padding: 8px; text-align: center;">
+
+  <span
+    style="width: auto; display: inline-block; padding: 6px 12px; background-color: #700a0a; border-radius: 3px; cursor: pointer;">
+    <a style="text-decoration: none; color: #ffffff;" target="_blank"
+       href="{{ full_domain }}">
+      Create another PDF
+    </a>
+  </span>
+
+    <div style="margin: 8px;">
+      Found a bug? Have a feature request?
+      <br>
+      Please
+      <a href="https://github.com/jessamynsmith/django_wkhtmltopdf_example/issues" target="_blank">
+        let us know</a>.
+    </div>
+
+  </div>
+
+</div>

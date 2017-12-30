@@ -1,0 +1,7 @@
+{% extends "email/base.txt" %}
+
+{% block content %}
+Thank you for creating a PDF!
+
+You can find your document attached to this email.
+{% endblock %}
