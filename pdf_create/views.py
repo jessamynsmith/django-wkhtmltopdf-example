@@ -2,6 +2,7 @@ import os
 
 from django.conf import settings
 from django.contrib import messages
+from django.http import HttpResponse
 from django.template.defaultfilters import date
 from django.template.loader import get_template
 from django.utils import timezone
@@ -53,19 +54,8 @@ class PdfCreateView(FormView):
 
         pdf_contents = get_pdfkit_contents(rendered_resume, extra_options=extra_options)
 
-        # with open('{}.html'.format(filename), 'w') as html_file:
-        #     html_file.write(str(rendered_resume))
-        #
-        # with open(filename, 'wb') as pdf_file:
-        #     pdf_file.write(pdf_contents)
+        response = HttpResponse(content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="{}"'.format(filename)
+        response.write(pdf_contents)
 
-        to_email = form.cleaned_data['email']
-        template_name = 'pdf_created'
-        plaintext = 'pdf_create/email/%s.txt' % template_name
-        html = 'pdf_create/email/%s.html' % template_name
-        attachments = [(filename, pdf_contents, 'application/pdf')]
-        send_email(to_email, _('You created a PDF!'), context, plaintext, html,
-                   attachments)
-
-        messages.success(self.request, _('PDF generated and emailed.'))
-        return super(PdfCreateView, self).form_valid(form)
+        return response
