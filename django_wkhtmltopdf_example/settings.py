@@ -176,11 +176,11 @@ SUMMERNOTE_CONFIG = {
 
     # Set common css/js media files
     'base_css': (
-        '{}/bootstrap/dist/css/bootstrap.css'.format(STATIC_URL),
+        '{}bootstrap/dist/css/bootstrap.css'.format(STATIC_URL),
     ),
     'base_js': (
-        '{}/jquery/dist/jquery.js'.format(STATIC_URL),
-        '{}/bootstrap/dist/js/bootstrap.js'.format(STATIC_URL),
+        '{}jquery/dist/jquery.js'.format(STATIC_URL),
+        '{}bootstrap/dist/js/bootstrap.js'.format(STATIC_URL),
     ),
 
     # You can disable file upload feature.
