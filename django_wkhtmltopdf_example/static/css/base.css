@@ -5,4 +5,25 @@ body {
 
 label {
     display: block;
+    padding-bottom: 6px;
+}
+
+.button, input[type="submit"], input[type="button"], .submit-row input, a.button {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background: rgb(121, 174, 200);
+    padding: 10px 15px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 4px;
+}
+
+input, textarea, select, .form-row p, form .button {
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 13px;
+    margin: 2px 0;
+    padding: 2px 3px;
 }
