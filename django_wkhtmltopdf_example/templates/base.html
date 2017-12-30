@@ -8,14 +8,13 @@
 
   <title>{% block title %}{% endblock %}</title>
 
-  <link rel="stylesheet" href="{% static 'admin/css/base.css' %}" type="text/css" media="screen">
   <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css" media="screen">
 
   {% block extra_head %}{% endblock %}
 </head>
 <body>
 
-<div id="content">
+<div>
   {% block content %}{% endblock %}
 
     {% block footer %}

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_summernote',
     'pdf_create',
 ]
 
@@ -142,6 +143,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_DIR, 'django_wkhtmltopdf_example', 'static'),
+    os.path.join(BASE_DIR, 'node_modules'),
 )
 
 DEFAULT_FROM_EMAIL = formataddr(ADMINS[0])
@@ -157,3 +159,35 @@ EMAIL_USE_TLS = True
 if not EMAIL_HOST_PASSWORD:
     EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
     EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emails')
+
+
+SUMMERNOTE_CONFIG = {
+    # Change editor size
+    'width': '100%',
+    'height': '400',
+
+    # Customize toolbar buttons
+    'toolbar': [
+        ['style', ['style']],
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['para', ['ul', 'ol', 'height']],
+        ['insert', ['link']],
+    ],
+
+    # Set common css/js media files
+    'base_css': (
+        '{}/bootstrap/dist/css/bootstrap.css'.format(STATIC_URL),
+    ),
+    'base_js': (
+        '{}/jquery/dist/jquery.js'.format(STATIC_URL),
+        '{}/bootstrap/dist/js/bootstrap.js'.format(STATIC_URL),
+    ),
+
+    # You can disable file upload feature.
+    'disable_upload': True,
+
+    # Lazy initialize
+    # If you want to initialize summernote at the bottom of page, set this as True
+    # and call `initSummernote()` on your page.
+    'lazy': True,
+}

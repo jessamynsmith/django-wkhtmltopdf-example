@@ -11,7 +11,7 @@ Like my work? Tip me! https://www.paypal.me/jessamynsmith
 
 Install system dependencies using a package manager. E.g. for OSX, using homebrew:
 
-    brew install python3
+    brew install python3 yarn
     brew install postgresql  # optional, will use sqlite if not available
 
 Install wkhtmltopdf 0.12.3 for your system from the following link:
@@ -59,6 +59,10 @@ Set up db:
 
     createdb django_wkhtmltopdf_example
     python manage.py migrate
+    
+Install JavaScript dependencies:
+
+    yarn install
 
 Check code style:
 

@@ -1,7 +1,6 @@
 import os
 
 from django.conf import settings
-from django.contrib import messages
 from django.http import HttpResponse
 from django.template.defaultfilters import date
 from django.template.loader import get_template
@@ -10,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import FormView
 
 from pdf_create.forms import PdfForm
-from pdf_create.utils import get_full_domain, get_pdfkit_contents, send_email
+from pdf_create.utils import get_full_domain, get_pdfkit_contents
 
 
 class PdfCreateView(FormView):
@@ -47,7 +46,8 @@ class PdfCreateView(FormView):
         timestamp = str(timezone.now()).split('.')[0]
         filename = '{} {}{}'.format(base_filename, timestamp, self.RESUME_EXTENSION)
 
-        # Options for wkhtmltopdf (see http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltopdf-0.9.9-doc.html)
+        # Options for wkhtmltopdf
+        # (see http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltopdf-0.9.9-doc.html)
         extra_options = {}
         extra_options['footer-left'] = u'{} {}'.format(_('Created: '), date_created)
         extra_options['footer-right'] = u'{} [page] {} [toPage]'.format(_('Page'), _('of'))

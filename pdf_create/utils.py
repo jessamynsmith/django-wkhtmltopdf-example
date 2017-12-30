@@ -40,7 +40,8 @@ def send_email(to_email, subject, context, text_template, html_template, attachm
 
 
 def get_pdfkit_options():
-    # Options for wkhtmltopdf (see http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltopdf-0.9.9-doc.html)
+    # Options for wkhtmltopdf
+    # (see http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltopdf-0.9.9-doc.html)
     options = {
         'footer-font-name': 'Verdana',
         'footer-font-size': '10',
