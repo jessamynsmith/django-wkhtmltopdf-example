@@ -1,7 +1,7 @@
-# Django Wkhtmltodpf Example
+# Django Wkhtmltopdf Example
 
-Django sample app that uses wkhtmltodpf to generate PDFs.
-https://django-wkhtmltodpf-example.herokuapp.com
+Django sample app that uses wkhtmltopdf to generate PDFs.
+https://django-wkhtmltopdf-example.herokuapp.com
 
 
 Like my work? Tip me! https://www.paypal.me/jessamynsmith
@@ -20,12 +20,12 @@ Install wkhtmltopdf 0.12.3 for your system from the following link:
 
 Fork the project on github and git clone your fork, e.g.:
 
-    git clone https://github.com/<username>/django-wkhtmltodpf-example.git
+    git clone https://github.com/<username>/django-wkhtmltopdf-example.git
 
 Create a virtualenv using Python 3 and install dependencies. I recommend using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/install.html#basic-installation) to that python. NOTE! You must change 'path/to/python3'
 to be the actual path to python3 on your system.
 
-    mkvirtualenv django_wkhtmltodpf_example --python=/path/to/python3
+    mkvirtualenv django_wkhtmltopdf_example --python=/path/to/python3
     pip install -r requirements.txt
 
 Set environment variables as desired. Recommended dev settings:
@@ -53,11 +53,11 @@ Set up a local symlink to the system wkhtmltopdf that mimics the location on her
 
 If you don't configure postgresql, the app will use sqlite. If you use postgresql, you need an additional environment variable:
 
-    export DATABASE_URL='postgres://<username>@127.0.0.1:5432/django_wkhtmltodpf_example'
+    export DATABASE_URL='postgres://<username>@127.0.0.1:5432/django_wkhtmltopdf_example'
 
 Set up db:
 
-    createdb django_wkhtmltodpf_example
+    createdb django_wkhtmltopdf_example
     python manage.py migrate
 
 Check code style:
@@ -70,7 +70,7 @@ Run server:
     
 Or run using gunicorn:
 
-    gunicorn django_wkhtmltodpf_example.wsgi
+    gunicorn django_wkhtmltopdf_example.wsgi
 
 ### Continuous Integration and Deployment
 
