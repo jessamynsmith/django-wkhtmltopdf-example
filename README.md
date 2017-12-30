@@ -86,4 +86,7 @@ Add Heroku buildpacks:
     heroku buildpacks:set heroku/python -i 1
     heroku buildpacks:set https://github.com/dscout/wkhtmltopdf-buildpack.git -i 2
 
-	
+Deploy:
+
+    git push heroku master
+    heroku run python manage.py migrate
