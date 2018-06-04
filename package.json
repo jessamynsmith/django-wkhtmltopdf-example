@@ -1,6 +1,12 @@
 {
+  "name": "django_wkhtmltopdfexample",
+  "description": "Django sample app that uses wkhtmltodpf to generate PDFs.",
+  "version": "0.1.0",
+  "author": "Jessamyn Smith",
+  "repository": "https://github.com/jessamynsmith/django-wkhtmltopdf-example",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "jquery": "^1.9.1"
+    "jquery": "^1.12.4"
   }
 }
